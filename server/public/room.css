@@ -1,0 +1,18 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+    color: #fff !important;
+}
+#room-c {
+    background-color: #000;
+    height: 100%;
+}
+
+.player {
+    border: 1px solid;
+    width: 200px;
+}
+.card{
+    border: 1px solid;
+}

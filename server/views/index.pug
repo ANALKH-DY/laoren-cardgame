@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/index.css")
+    block head
+      script(type="text/javascript" src="/common.js")
+      script(type="text/javascript" src="/axios.js")
+    
+  body
+    block content
+      h1 进忠老人牌
+      input(type=text id="roomIdInput" value="34")
+      button(id="er") 进入房间
+      script(type="text/javascript" src="/index.js")
+    
