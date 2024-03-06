@@ -3,7 +3,7 @@
 var roomid = lsint("roomid");
 var socket;
 var playerid;
-var ip = "192.168.0.104"
+var ip = "localhost"
 
 // phaser牌桌渲染
 class Example extends Phaser.Scene {

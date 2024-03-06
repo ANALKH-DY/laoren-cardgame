@@ -4,12 +4,13 @@ class System {
     // 保存所有房间
     rooms = {} 
     constructor() { }
-    getRoom(roomid) {
+    getRoomById(roomid) {
+        //如果没有就动态创建一个
         if(this.rooms[roomid] === undefined) this.rooms[roomid] = new Room(roomid);
         return this.rooms[roomid];
     }
     leaveRoom(roomid, playerid) {
-        var room = this.getRoom(roomid)
+        var room = this.getRoomById(roomid)
         room.removePlayer(playerid);
 
         if (room.players.length === 0) {

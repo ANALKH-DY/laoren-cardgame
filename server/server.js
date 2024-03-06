@@ -1,7 +1,8 @@
 // nodejs服务器
 
 const express = require('express');
-const expressWs = require('express-ws');
+
+const expressWs = require('express-ws');    //websocket
 const bodyParser = require('body-parser');
 const path = require('path');
 const JZLRP = require('./entity/System');
@@ -39,7 +40,7 @@ app.get('/enterroom/:roomid',function(req,res){
     var roomid = parseInt(req.params.roomid);
     if(roomid){
         console.log('请求进入房间'+req.params.roomid);
-        var room = app.JZLRP.getRoom(roomid);
+        var room = app.JZLRP.getRoomById(roomid);
         if(room.isFull()){
             res.json({status:2,msg: "该房间人数已满！"});  
         }else if(room.isInGaming()){
@@ -60,7 +61,7 @@ app.get('/enterroom/:roomid',function(req,res){
 // 进入房间建立websokcet连接
 app.ws('/room/:roomid',function(ws,req){
 
-    var room = app.JZLRP.getRoom(req.params.roomid);
+    var room = app.JZLRP.getRoomById(req.params.roomid);
     var playerid;
     ws.on('message',function(msg){
         console.log("收到玩家信息",msg);

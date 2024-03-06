@@ -1,9 +1,9 @@
 extends index.pug
 append head
     link(rel="stylesheet", href="/room.css")
-    script(type="text/javascript" src="/phaser.js") 
+    script(type="text/javascript" defer src="/phaser.js") 
 
 block content
     div(id="room-c")
 
-    script(type="text/javascript" src="/room.js")
+    script(type="text/javascript" defer src="/room.js")
